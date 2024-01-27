@@ -43,11 +43,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: Colors.pink,
                 );
               } else {
-                return Container(
-                  child: const Stack(
-                    alignment: Alignment.center,
-                  ),
-                )
+                return ListView.builder(
+                  itemCount: snapshot.data!.articles!.length,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      child: const Stack(
+                        alignment: Alignment.center,
+                      ),
+                    );
+                  },
+                );
               }
             },
           )
